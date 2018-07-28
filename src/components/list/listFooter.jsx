@@ -28,11 +28,11 @@ const getLinks = (pages, current, handleClick, showLoader) => {
 const ListFooter = ({ showLoader, handleClick, pagination }) => {
     return (
         <div>
-            {
+            { pagination &&
                 <div style={buttonWrapperStyle}>
-                    <div style={{ width: '100%' }}>{pagination && pagination.next && <Button variant="contained" color="primary" onClick={() => { handleClick(null, pagination.next) }}>{pagination.range}</Button>}</div>
-                    {pagination && pagination.pages && pagination.pages.length && getLinks(pagination.pages, pagination.current ,handleClick, showLoader)}
-                    <div style={{ width: '100%', textAlign: 'right' }}>{pagination && pagination.previous && <Button variant="contained" color="primary" onClick={() => { handleClick(null, pagination.previous) }}>Show Previous 10 results</Button>}</div>
+                    <div style={{ width: '100%' }}>{pagination.next && <Button variant="contained" color="primary" onClick={() => { handleClick(null, pagination.next) }}>{pagination.range}</Button>}</div>
+                    {pagination.pages && pagination.pages.length && getLinks(pagination.pages, pagination.current ,handleClick, showLoader)}
+                    <div style={{ width: '100%', textAlign: 'right' }}>{pagination.previous && <Button variant="contained" color="primary" onClick={() => { handleClick(null, pagination.previous) }}>Show Previous 10 results</Button>}</div>
                 </div>
             }
         </div>

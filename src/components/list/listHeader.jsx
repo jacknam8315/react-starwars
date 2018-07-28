@@ -8,6 +8,7 @@ import _ from 'lodash';
 const ListHeader = ({ selectedItems, deleteChip }) => {
     return (
         <div>
+            { selectedItems && selectedItems.length > 0 &&
             <Stepper nonLinear activeStep={selectedItems.length - 1}>
                 {selectedItems.map((item, index) => {
                     return (
@@ -19,6 +20,7 @@ const ListHeader = ({ selectedItems, deleteChip }) => {
                     );
                 })}
             </Stepper>
+            }
         </div>
     )
 

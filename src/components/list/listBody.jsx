@@ -18,7 +18,7 @@ const styles = {
 const ListBody = ({ showLoader, selectedList, handleClick, classes, pagination }) => {
     let displayFields = selectedList.displayFields ? selectedList.displayFields() : selectedList;
     return (
-        <div style={{ background:'#ffffff', padding: "10px" }}>
+        <div style={{ minHeight:'400px', padding: "10px" }}>
             {showLoader && <CircularProgress />}
             {!showLoader && <List>
                 {
